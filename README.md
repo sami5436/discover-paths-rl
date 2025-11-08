@@ -3,6 +3,8 @@
 ## Overview
 This project is a Python implementation of "Using Reinforcement Learning To Discover Paths in a 2-Agent Transportation World."
 
+*We used Gemini to assist with the initial thought process.*
+
 It uses Q-Learning and SARSA algorithms to train two agents ('F' and 'M') to cooperatively solve a block pickup and dropoff problem in a 5x5 grid.  
 The system runs a suite of experiments to test and analyze agent performance, coordination, and adaptability as specified in the project requirements.
 
@@ -61,7 +63,7 @@ The program is organized into 7 Python files, each with a specific responsibilit
 
 ---
 
-### 1. `main.py` — The Entry Point
+### 1. `main.py` - The Entry Point
 
 **High-Level Logic:**
 This is the main script you execute.
@@ -70,7 +72,7 @@ It’s the "conductor" that starts the show.
 
 ---
 
-### 2. `constants.py` — Global Configuration
+### 2. `constants.py` - Global Configuration
 
 **High-Level Logic:**
 This file is a "single source of truth" for all static experiment parameters.
@@ -85,7 +87,7 @@ This makes it easy to tweak the experiment setup in one place.
 
 ---
 
-### 3. `logger.py` — Output Logging
+### 3. `logger.py` - Output Logging
 
 **High-Level Logic:**
 This file defines the Logger class.
@@ -95,10 +97,10 @@ This keeps the console clean and creates a permanent, detailed record of every r
 
 ---
 
-### 4. `environment.py` — The World & Rules Engine
+### 4. `environment.py` - The World & Rules Engine
 
 **High-Level Logic:**
-This file defines the PDWorld class — the "game board" and "referee."
+This file defines the PDWorld class - the "game board" and "referee."
 It knows nothing about Q-learning. Its job is to:
 
 * Manage the grid state (block counts at P/D locations)
@@ -107,7 +109,7 @@ It knows nothing about Q-learning. Its job is to:
 
 ---
 
-### 5. `agent.py` — The Agents & Their Brains
+### 5. `agent.py` - The Agents & Their Brains
 
 **High-Level Logic:**
 This file defines two classes:
@@ -124,18 +126,18 @@ This file defines two classes:
 
 ---
 
-### 6. `visualization.py` — The Graphing Engine
+### 6. `visualization.py` - The Graphing Engine
 
 **High-Level Logic:**
 This class contains all matplotlib code.
-It has no knowledge of the simulation itself — it simply takes processed data from the ExperimentRunner and generates the two required visual outputs:
+It has no knowledge of the simulation itself - it simply takes processed data from the ExperimentRunner and generates the two required visual outputs:
 
 * `plot_performance()`: Creates the “Steps per Run” line graph
 * `plot_attractive_paths()`: Creates the 5x5 grid with arrows (a quiver plot) to visualize the agents' learned paths
 
 ---
 
-### 7. `experiment.py` — The Lab Manager
+### 7. `experiment.py` - The Lab Manager
 
 **High-Level Logic:**
 This is the most complex class. The ExperimentRunner does the “science.” It:
